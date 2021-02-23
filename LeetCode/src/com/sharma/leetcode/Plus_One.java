@@ -1,7 +1,5 @@
 package com.sharma.leetcode;
 
-import jdk.nashorn.internal.ir.ReturnNode;
-
 /*
  Problem Statement : 
  

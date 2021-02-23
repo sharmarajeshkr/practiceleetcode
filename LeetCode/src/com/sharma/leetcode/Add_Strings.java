@@ -1,9 +1,5 @@
 package com.sharma.leetcode;
 
-import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.List;
-
 /*
 Problem Statement : 
 
@@ -20,15 +16,58 @@ You must not use any built-in BigInteger library or convert the inputs to intege
 
 public class Add_Strings {
 	public static void main(String[] args) {
-		String num1 = "0";// ;"6913259244";// "9"; // "123";
-		String num2 = "0";// "71103343";// "99";//"456";
+		String num1 = "123" ;// "0";// ;"6913259244";// "9"; // "123";
+		String num2 = "456"; //"0";// "71103343";// "99";//"456";
 
 		// "6913259244"
 		// "71103343"
 
-		System.out.println(new Add_Strings().addStrings(num1, num2));
-
+		//System.out.println(new Add_Strings().addStrings(num1, num2));
+		System.out.println(new Add_Strings().addStringNumbers(num1, num2));
 	}
+	
+	public String addStringNumbers(String n1,String n2) {
+		
+		int i = n1.length() -1; 
+		int j = n2.length() -1 ;
+		
+		int sum = 0;
+		int carry = 0;
+		
+		StringBuffer sb = new StringBuffer();
+		
+		if (i ==0 && j == 0) {
+			return "0";
+		}
+		
+		while( i >= 0 || j >= 0) {
+			sum = carry;
+			if (i >= 0) {
+				sum += (n1.charAt(i)) - '0';
+				i--;
+			}
+			
+			if (j >= 0) {
+				sum += (n2.charAt(j))-'0';
+				j--;
+			}
+			
+			sb.append(sum % 10);
+			carry = sum /10;
+			
+			if (carry > 0) {
+				sb.append(carry);
+			}
+			
+		}	
+		
+		System.out.println(sb.reverse().toString());		
+		
+		
+		return "";
+	}
+	
+	
 
 	public String addStrings(String num1, String num2) {
 

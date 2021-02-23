@@ -49,7 +49,7 @@ public class Group_Anagrams {
 	}
 
 	public List<List<String>> groupAnagrams(String[] strs) {
-		Map<String, List<String>> map = new HashMap<>();
+		Map<String, List<String>> map = new HashMap<String, List<String>>();
 
 		if (strs.length == 0 || strs == null)
 			return new ArrayList<>();
